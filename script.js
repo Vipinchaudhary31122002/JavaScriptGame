@@ -500,7 +500,6 @@ canvas.addEventListener("contextmenu", (e) => {
 addEventListener("keypress", (e) => {
   if (e.key === " ") {
     if (playerScore < 20) return;
-
     // Decreasing Player Score for using Huge Weapon
     playerScore -= 20;
     // Updating Player Score in Score board in html

@@ -4,29 +4,56 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScriptGame</title>
+    <title>Meteor Blaster</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  </script>
   <body>
+    <!-- Scoreboard -->
     <div class="scoreBoard">Score : 0</div>
+    <!-- Game Instructions inside the form -->
     <form action="" method="get">
+      <span id="GameName">Meteor Blaster</span>
+      <div class="instructions">
+        <h2>How to Play</h2>
+        <ul>
+          <li><strong>Left Click</strong> to fire a basic light weapon.</li>
+          <li>
+            <strong>Right Click</strong> to fire a heavy weapon (costs 2
+            points).
+          </li>
+          <li>
+            <strong>Spacebar</strong> to activate a huge weapon (costs 20
+            points).
+          </li>
+          <li>
+            Avoid enemies! If an enemy collides with you, the game is over.
+          </li>
+          <li>Kill enemies to earn points!</li>
+        </ul>
+      </div>
+
+      <!-- Difficulty Selection -->
       <select name="" id="difficulty">
         <option value="Easy">Easy</option>
         <option value="Medium">Medium</option>
         <option value="Hard">Hard</option>
       </select>
-      <button type="submit"value="Play">Play</button>
+      <button type="submit" value="Play">Play</button>
     </form>
-    <div class="myGame"></div>
-  </body>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
-    integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
 
-  <script src="./script.js"></script>
+    <!-- Game Area -->
+    <div class="myGame"></div>
+
+    <!-- GSAP Animation Library -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
+      integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Custom Script -->
+    <script src="./script.js"></script>
+  </body>
 </html>
