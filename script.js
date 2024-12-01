@@ -22,7 +22,7 @@ let playerScore = 0;
 // Basic Functions
 
 // Event Listener for Difficulty form
-document.querySelector("input").addEventListener("click", (e) => {
+document.querySelector("button").addEventListener("click", (e) => {
   e.preventDefault();
 
   // Stoping Music
@@ -47,10 +47,6 @@ document.querySelector("input").addEventListener("click", (e) => {
   if (userValue === "Hard") {
     setInterval(spawnEnemy, 1000);
     return (difficulty = 10);
-  }
-  if (userValue === "Insane") {
-    setInterval(spawnEnemy, 700);
-    return (difficulty = 12);
   }
 });
 
@@ -166,7 +162,7 @@ class HugeWeapon {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.color = "rgba(255,0,133,1)";
+    this.color = "red";
   }
 
   draw() {
@@ -255,7 +251,7 @@ class Particle {
 // -------------------------------------------------Main Logic Here -------------------------------------------
 
 // Creating Player Object, Weapons Array, Enemy Array, Etc Array
-const abhi = new Player(playerPosition.x, playerPosition.y, 15, "white");
+const playerobject = new Player(playerPosition.x, playerPosition.y, 15, "white");
 const weapons = [];
 const hugeWeapons = [];
 const enemies = [];
@@ -313,12 +309,12 @@ function animation() {
   scoreBoard.innerHTML = `Score : ${playerScore}`;
 
   // Clearing canvas on each frame
-  context.fillStyle = "rgba(49, 49, 49,0.2)";
+  context.fillStyle = "rgba(0, 0, 0)";
 
   context.fillRect(0, 0, canvas.width, canvas.height);
 
   // Drawing Player
-  abhi.draw();
+  playerobject.draw();
 
   // Generating Particles
   particles.forEach((particle, particleIndex) => {
@@ -358,12 +354,12 @@ function animation() {
 
     // Finding Distance between player and enemy
     const distanceBetweenPlayerAndEnemy = Math.hypot(
-      abhi.x - enemy.x,
-      abhi.y - enemy.y
+      playerobject.x - enemy.x,
+      playerobject.y - enemy.y
     );
 
     // Stoping Game if enemy hit player
-    if (distanceBetweenPlayerAndEnemy - abhi.radius - enemy.radius < 1) {
+    if (distanceBetweenPlayerAndEnemy - playerobject.radius - enemy.radius < 1) {
       cancelAnimationFrame(animationId);
       gameOverSound.play();
       hugeWeaponSound.pause();
