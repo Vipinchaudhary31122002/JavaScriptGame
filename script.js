@@ -5,8 +5,8 @@ const killEnemySound = new Audio("./music/killEnemy.mp3");
 const gameOverSound = new Audio("./music/gameOver.mp3");
 const heavyWeaponSound = new Audio("./music/heavyWeapon.mp3");
 const hugeWeaponSound = new Audio("./music/hugeWeapon.mp3");
-
 introMusic.play();
+
 // Basic Environment Setup
 const canvas = document.createElement("canvas");
 document.querySelector(".myGame").appendChild(canvas);
@@ -118,7 +118,6 @@ class Player {
       false
     );
     context.fillStyle = this.color;
-
     context.fill();
   }
 }
@@ -262,7 +261,7 @@ const spawnEnemy = () => {
   // generating random size for enemy
   const enemySize = Math.random() * (40 - 5) + 5;
   // generating random color for enemy
-  const enemyColor = `hsl(${Math.floor(Math.random() * 360)},100%,50%)`;
+  const enemyColor = `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`;
 
   // random is Enemy Spawn position
   let random;
@@ -309,7 +308,7 @@ function animation() {
   scoreBoard.innerHTML = `Score : ${playerScore}`;
 
   // Clearing canvas on each frame
-  context.fillStyle = "rgba(0, 0, 0)";
+  context.fillStyle = "rgba(0, 0, 0, 0.09)";
 
   context.fillRect(0, 0, canvas.width, canvas.height);
 
